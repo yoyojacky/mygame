@@ -3,24 +3,25 @@ import random
 import sys
 
 pygame.init()
-WIDTH = 1024 
-HEIGHT = 600 
+WIDTH = 480
+HEIGHT = 320 
 RED = (255,0,0)
 BLUE = (255,255,0)
 YELLOW = (255,255,0)
-player_size = 50
+player_size = 10
 player_pos = [WIDTH/2,HEIGHT-2*player_size]
-BACKGROUND_COLOR = (201,100,50)
-enemy_size = 50
+BACKGROUND_COLOR = (0,100,150)
+enemy_size = 10
 enemy_pos = [random.randint(0,WIDTH-enemy_size),0]
 enemy_list = [enemy_pos]
 SPEED = 10
 score = 0
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
+screen = pygame.display.set_mode((WIDTH, HEIGHT),pygame.FULLSCREEN)
 game_over = False
+pygame.mouse.set_visible(False)
 
 clock = pygame.time.Clock()
-myFont = pygame.font.SysFont("monospace", 35)
+myFont = pygame.font.SysFont("monospace", 25)
 
 def set_level(score, SPEED):
     if score < 20:
